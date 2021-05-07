@@ -1,0 +1,26 @@
+<LinkTo class="text-center d-none d-lg-block primary-color text-decoration-none pt-3" @route="index">
+  {{@navBrand}}
+</LinkTo>
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+  <div class="container-fluid">
+    <LinkTo class="navbar-brand d-lg-none" @route="index">{{@navBrand}}</LinkTo>
+    <button type="button"
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navigation-bar"
+            aria-controls="navigation-bar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navigation-bar" class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav">
+        {{#each @navItems as |item|}}
+          <LinkTo @tagName="li" class="nav-item text-center" @route={{item.route}}>
+            <a class="nav-link" href="#">{{item.text}}</a>
+          </LinkTo>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</nav>

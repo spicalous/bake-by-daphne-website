@@ -1,7 +1,60 @@
-{{page-title "BakedByDaphneWebsite"}}
+{{page-title "Bake by Daphne"}}
+<header>
+  <Nav @navBrand="Bake by Daphne"
+       @navItems={{array
+          (hash
+                  text="HOME"
+                  route="index")
+          (hash
+                  text="DELIVERY"
+                  route="delivery")
+          (hash
+                  text="ALLERGEN INFORMATION"
+                  route="allergen-information")
+          (hash
+                  text="CONTACT US"
+                  route="contact-us")}}/>
+</header>
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<main class="flex-shrink-0">
+  {{outlet}}
+</main>
 
-{{outlet}}
+<footer class="footer mt-auto pt-3 pb-4 bg-light">
+  <div class="container">
+    <div class="row fs-6">
+      <div class="col-12 col-md-6">
+        <h5></h5>
+        <ul class="list-unstyled">
+          <li>
+            <LinkTo @route="delivery">Delivery</LinkTo>
+          </li>
+          <li>
+            <LinkTo @route="allergen-information">Allergen information</LinkTo>
+          </li>
+          <li>
+            <LinkTo @route="contact-us">Contact us</LinkTo>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 text-muted fs-6">
+        <h5>Bake by Daphne</h5>
+        <p>
+          <Lorem/>
+        </p>
+        <div>
+          <div class="glyph d-inline-block me-2">
+            <Icon::Instagram/>
+          </div>
+          <a href="https://instagram.com/bakebydaphne">@bakebydaphne</a>
+        </div>
+        <div class="mt-2">
+          <div class="glyph d-inline-block me-2">
+            <Icon::Email @stroke="black"/>
+          </div>
+          <a href="mailto:">blah@blah.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
