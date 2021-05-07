@@ -4,7 +4,7 @@ module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'baked-by-daphne-website',
     environment,
-    rootURL: '/',
+    rootURL: '/bake-by-daphne-website',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
